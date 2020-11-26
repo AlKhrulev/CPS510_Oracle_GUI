@@ -9,7 +9,7 @@ def handle_exit(event):
     print("Exiting...")
     exit(0)
 
-if __name__=="__main__":
+def create_window():
     window=tk.Tk()
     window.geometry("600x400") #widthxheight
     window.title("Database GUI Connector")
@@ -51,6 +51,14 @@ if __name__=="__main__":
     
     button1.bind("<Button-1>",handle_connect_to_db)
     button2.bind("<Button-2>",handle_exit)
+
+    return window
+
+if __name__=="__main__":
+    window=create_window()
+    print(f"here")
+    #run an event loop
+    window.mainloop()
 
 
     #must be present at the end
