@@ -1,87 +1,89 @@
-#!/usr/bin/env python -i
+#!/usr/bin/env python
 import tkinter as tk
+from tkinter import N,S,W,E
 
-def handle_connect_to_db(event):
-    #write the code to connect to db here
-    print("Successfully connected to the database")
+class mainWindow():
+    def __init__(self):
+        self.root = tk.Tk()
+        #self.label=tk.Label(self.root,
+        #                   text = "Welcome to the database.\nPlease click the button to connect.")
 
-def handle_exit(window,button1,button2):
-    print("Exiting...")
-    update_window(window,button1,button2)
-    print("in handle exit")
-
-def create_window():
-    """
-    Create an initial window with 2 buttons
-    """
-    window=tk.Tk()
-    window.geometry("600x400") #widthxheight
-    window.title("Database GUI Connector")
-
-    text="""Welcome to the database.
-    Please click the button to connect.
-    """
-    greeting=tk.Label(text=text)
-    greeting.pack()
-
-    #create 2 frames for 2 buttons
-    frame1 = tk.Frame(master=window,width=200,height=50)
-    frame1.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
-
-    frame2=tk.Frame(master=window,width=200,height=50)
-    frame2.pack(fill=tk.BOTH, side=tk.RIGHT, expand=True)
-
-    button1 = tk.Button(
-        text="Establish Connection",
-        width=15,
-        height=5,
-        bg="red",
-        fg="black",
-        master=frame1
-    )
+        self.root.geometry("200x100")
+        self.label=tk.Label(self.root)        
     
-    button1.pack()
+        #TODO change the button command once they are written
+        self.buttonTopLeft = tk.Button(self.root,
+                          text = 'Establish connection',
+                          command=self.connect_to_db)
+        self.buttonTopRight = tk.Button(self.root,
+                          text = 'DROP TABLES',
+                          command=lambda: self.label.grid())
+        self.buttonBottomLeft = tk.Button(self.root,
+                          text = 'POPULATE TABLES',
+                          command=lambda: self.label.grid_forget())
+        self.buttonBottomRight = tk.Button(self.root,
+                          text = 'RUN A CUSTOM QUERY',
+                          command=lambda: self.label.grid())                     
+       
+        #for reference, don't delete yet padx=10, pady=10
+        #
+        self.buttonTopLeft.grid(column=0, row=0,sticky=N+S+E+W)
+        self.buttonTopRight.grid(column=1, row=0,sticky=N+S+E+W)
+        self.buttonBottomLeft.grid(column=0, row=1,sticky=N+S+E+W)
+        self.buttonBottomRight.grid(column=1, row=1,sticky=N+S+E+W)
+        self.label.grid(column=2, row=2,sticky=N+S+E+W)
 
-    button2 = tk.Button(
-        text="Exit",
-        width=15,
-        height=5,
-        bg="red",
-        fg="black",
-        master=frame2,
-        command=handle_exit(window,button1,button2)
-    )
+        #set weight to make the window responsive
+        for i in range(2):
+            self.root.grid_rowconfigure(i,  weight =1)
+        for i in range(2):
+            self.root.grid_columnconfigure(i,  weight =1)
+
+        #temporary hide the 3 other buttons
+        self.buttonTopRight.grid_remove()
+        self.buttonBottomLeft.grid_remove()
+        self.buttonBottomRight.grid_remove()
+
+        #run the mainloop
+        self.root.mainloop()
     
-    button2.pack()
+    def quit(self):
+        self.root.destroy()
     
-    button1.bind("<Button-1>",handle_connect_to_db)
-    #button2.bind("<Button-2>",handle_exit)
+    def createTables(self):
+        #TODO Create tables through CREATE TABLE SQL Command
+        pass
+    def populateTables(self):
+        #TODO populate tables with INSERT INTO SQL Command
+        pass
+    def dropTables(self):
+        #TODO Drop tables with DROP TABLE SQL Command
+        pass
+    def runCustomQuery(self):
+        #TODO run a custiom query in a separate popup window
+        pass
 
-    return window,button1,button2
+    def connect_to_db(self):
+        """
+        Connect to the Oracle DMBS and restore the right layout through
+        self.restore_layout()
+        """
+        #TODO paste the db connect code here
 
-def update_window(window,button1,button2):
-    """
-    Delete the previous 2 buttons and update the window
-    """
-    button1.destroy()
-    button2.destroy()
+        #restore the layout to the correct one
+        self.restore_layout()
 
-    #the text to use for the buttons
-    new_text="CREATE tables,DROP tables,POPULATE tables,RUN a custom query".split(",")
-    new_text=[[new_text[0],new_text[1]],[new_text[2],new_text[3]]]
+    def restore_layout(self):
+        """
+        Change the text on the right button and restore the other 3 buttons in the grid
+        """
+        #change the text on the top left button
+        self.buttonTopLeft.configure(text="CREATE TABLES")
+        #return buttons to the window
+        self.buttonTopRight.grid()
+        self.buttonBottomLeft.grid()
+        self.buttonBottomRight.grid()
+        self.root.geometry("400x500")
 
-    for i in range(2):
-        for j in range(2):
-            frame = tk.Frame(
-            master=window,
-            relief=tk.RAISED,
-            borderwidth=1)
-
-        frame.grid(row=i, column=j)
-        label = tk.Label(master=frame, text=new_text[i][j])
-        label.pack()
-
-window,button1,button2=create_window()
-print(f"here")
-#run an event loop
-window.mainloop()
+if __name__=="__main__": 
+    app = mainWindow()
