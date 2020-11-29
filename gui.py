@@ -66,9 +66,9 @@ class mainWindow():
         #TODO run a custiom query in a separate popup window
         
         query = simpledialog.askstring(title="Query", prompt=("Input Custom Query Here: " + " " * 100))
-        self.connection.execute(query)
+        self.cursor.execute(query)
         
-        result = self.connection.fetchall()
+        result = self.cursor.fetchall()
         
         for x in result:
             print(x)
@@ -87,6 +87,7 @@ class mainWindow():
                 config.password,
                 config.dsn,
                 encoding=config.encoding)
+            self.cursor = self.connection.cursor()
         
             # show the version of the Oracle Database
             print(self.connection.version)
