@@ -1,0 +1,72 @@
+CREATE TABLE JobPostings(
+JobID NUMBER(10) PRIMARY KEY,
+JobTitle VARCHAR2(40) NOT NULL,
+CompanyName VARCHAR2(50) NOT NULL,
+CountryName VARCHAR2(50) NOT NULL,
+Province VARCHAR2(60) DEFAULT 'N/A',
+City VARCHAR2(90) NOT NULL,
+StreetName VARCHAR2(50),
+BuildingNumber VARCHAR2(5),
+StartDate DATE,
+SalaryStartRange NUMBER(7) ,
+SalaryEndRange NUMBER(7),
+RequiredSkills VARCHAR2(300) NOT NULL,
+Responsibilities VARCHAR2(300) NOT NULL)
+
+CREATE TABLE Recruiters(
+UserID NUMBER(10) PRIMARY KEY,
+JobTitle VARCHAR2(40) NOT NULL,
+CompanyName VARCHAR2(50) NOT NULL,
+CompanyDescription VARCHAR2(300),
+FirstName VARCHAR2(40) NOT NULL,
+LastName VARCHAR2(40) NOT NULL,
+MiddleName VARCHAR2(40),
+Email VARCHAR2(320) UNIQUE)
+
+CREATE TABLE Applicants(
+UserID NUMBER(10) PRIMARY KEY,
+FirstName VARCHAR2(40) NOT NULL,
+LastName VARCHAR2(40) NOT NULL,
+MiddleName VARCHAR2(40),
+DateOfBirth DATE NOT NULL,
+CurrentCountryName VARCHAR2(60) NOT NULL,
+Province VARCHAR2(60) DEFAULT 'N/A',
+CurrentCity VARCHAR2(90) NOT NULL,
+StreetName VARCHAR2(50),
+BuildingNumber VARCHAR2(5),
+ApartmentNumber VARCHAR2(4) DEFAULT 'N/A',
+PostalCode VARCHAR2(10),
+Email VARCHAR2(320) UNIQUE NOT NULL,
+CountryCode NUMBER(3) NOT NULL,
+PhoneNumber NUMBER(10) NOT NULL,
+Type VARCHAR2(20) NOT NULL,
+InstitutionName VARCHAR2(100),
+DegreeType VARCHAR2(50),
+Major VARCHAR2(50),
+MajorStartDate DATE,
+MajorEndDate DATE,
+CGPA NUMBER(3,2),
+Title VARCHAR2(40),
+CompanyName VARCHAR2(50),
+JobStartDate DATE,
+JobEndDate DATE,
+JobCountryName VARCHAR2(60),
+JobCity VARCHAR2(90),
+Description VARCHAR2(300),
+ProgrammingLanguages VARCHAR2(150) NOT NULL,
+SoftwareTools VARCHAR2(300),
+SpokenLanguages VARCHAR2(100),
+OtherSkills VARCHAR2(300),
+WebsiteLink VARCHAR2(300),
+LinkName VARCHAR2(50))
+
+CREATE TABLE JobsApplied(
+ApplicationStatus VARCHAR(40) NOT NULL,
+JobID NUMBER(10) REFERENCES JobPostings(JobID),
+UserID NUMBER(10) REFERENCES Applicants(UserID),
+PRIMARY KEY(UserID,JobID))
+
+CREATE TABLE JobsManaged(
+JobID NUMBER(10) REFERENCES JobPostings(JobID),
+UserID NUMBER(10) REFERENCES Recruiters(UserID),
+PRIMARY KEY(UserID,JobID))
