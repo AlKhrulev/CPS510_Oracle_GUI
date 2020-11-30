@@ -19,10 +19,10 @@ class mainWindow():
                           command=self.connect_to_db)
         self.buttonTopRight = tk.Button(self.root,
                           text = 'DROP TABLES',
-                          command=lambda: self.label.grid())
+                          command=self.dropTables)
         self.buttonBottomLeft = tk.Button(self.root,
                           text = 'POPULATE TABLES',
-                          command=lambda: self.label.grid_forget())
+                          command=self.populateTables)
         self.buttonBottomRight = tk.Button(self.root,
                           text = 'RUN A CUSTOM QUERY',
                           command=self.runCustomQuery)
@@ -119,7 +119,7 @@ class mainWindow():
         Change the text on the right button and restore the other 3 buttons in the grid
         """
         #change the text on the top left button
-        self.buttonTopLeft.configure(text="CREATE TABLES")
+        self.buttonTopLeft.configure(text="CREATE TABLES",command=self.createTables)
         #return buttons to the window
         self.buttonTopRight.grid()
         self.buttonBottomLeft.grid()
