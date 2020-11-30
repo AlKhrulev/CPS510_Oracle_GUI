@@ -81,16 +81,27 @@ class mainWindow():
         self.connection.cursor().execute(dropJobsManaged)
 
     def runCustomQuery(self):
-        #TODO run a custiom query in a separate popup window
-        
-        query = simpledialog.askstring(title="Query", prompt=("Input Custom Query Here: " + " " * 100))
-        self.cursor.execute(query)
-        
-        result = self.cursor.fetchall()
-        
-        for x in result:
-            print(x)
-        pass
+            #TODO run a custiom query in a separate popup window
+            query = simpledialog.askstring(title="Query", prompt=("Input Custom Query Here: " + " " * 100))
+            self.cursor.execute(query)
+            
+            result = self.cursor.fetchall()
+            
+            string = ""
+            
+            for res in result:
+                for x in res:
+                    string = string + str(x) + ", "
+            
+            newWin = tk.Tk()
+            textBox = tk.Text(newWin)
+            textBox.insert(tk.INSERT,string)
+            textBox.config(state = tk.DISABLED)
+            textBox.pack()
+            newButton = tk.Button(newWin,text='close',command=newWin.destroy)
+            newButton.pack()
+            
+            newWin.mainloop()
 
     def connect_to_db(self):
         """
