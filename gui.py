@@ -55,14 +55,14 @@ class mainWindow():
     
     def createTables(self):
         #TODO Create tables through CREATE TABLE SQL Command
-        createTablesString = open("createTables.txt", "r").read()
+        createTablesString = " ".join(open("createTables.txt", "r").read().split('\n'))
         
         self.connection.cursor().execute(createTablesString)
 
 
     def populateTables(self):
         #TODO populate tables with INSERT INTO SQL Command
-        populateTablesString = open("populateTables.txt", "r").read()
+        populateTablesString = " ".join(open("populateTables.txt", "r").read().split('\n'))
 
         self.connection.cursor().execute(populateTablesString)
 
