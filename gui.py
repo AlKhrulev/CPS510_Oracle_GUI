@@ -55,14 +55,47 @@ class mainWindow():
     
     def createTables(self):
         #TODO Create tables through CREATE TABLE SQL Command
-        createTablesString = " ".join(open("createTables.txt", "r").read().split('\n'))
-        
+        # createTablesString = " ".join(open("createTables.txt", "r").read().split('\n'))
+        createTablesString = """CREATE TABLE JobPostings(
+                                JobID NUMBER(10) PRIMARY KEY,
+                                JobTitle VARCHAR2(40) NOT NULL,
+                                CompanyName VARCHAR2(50) NOT NULL,
+                                CountryName VARCHAR2(50) NOT NULL,
+                                Province VARCHAR2(60) DEFAULT 'N/A',
+                                City VARCHAR2(90) NOT NULL,
+                                StreetName VARCHAR2(50),
+                                BuildingNumber VARCHAR2(5),
+                                StartDate DATE,
+                                SalaryStartRange NUMBER(7) ,
+                                SalaryEndRange NUMBER(7),
+                                RequiredSkills VARCHAR2(300) NOT NULL,
+                                Responsibilities VARCHAR2(300) NOT NULL)"""
+
         self.connection.cursor().execute(createTablesString)
 
 
     def populateTables(self):
         #TODO populate tables with INSERT INTO SQL Command
-        populateTablesString = " ".join(open("populateTables.txt", "r").read().split('\n'))
+        # populateTablesString = " ".join(open("populateTables.txt", "r").read().split('\n'))
+        populateTablesString = """INSERT INTO JobPostings VALUES 
+                                    (1,
+                                    'Data Scientist',
+                                    'Sapien Cras Incorporated',
+                                    'Germany',
+                                    'De Haan',
+                                    '636-962 Cursus. Road',
+                                    '247',
+                                    TO_DATE('11-01-22','DD-MM-YY'),
+                                    40971,
+                                    57383,
+                                    'Linux,
+                                    Tensorflow,
+                                    Python,
+                                    Bash,
+                                    Pandas,
+                                    Numpy,
+                                    Git',
+                                    'Maintain and research Deep Learning algorithms for healthcare;develop and deploy ML models in AWS')"""
 
         self.connection.cursor().execute(populateTablesString)
 
