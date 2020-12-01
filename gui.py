@@ -79,6 +79,15 @@ class mainWindow():
         self.connection.cursor().execute(dropApplicants)
         self.connection.cursor().execute(dropJobsApplied)
         self.connection.cursor().execute(dropJobsManaged)
+        """
+        #uncomment out and execute as a drop
+        self.connection.cursor().execute('DROP TABLE RecruiterEmail CASCADE Constraints')
+        self.connection.cursor().execute('DROP TABLE ApplicantsEmails CASCADE Constraints')
+        self.connection.cursor().execute('DROP TABLE ApplicantsPhone CASCADE Constraints')
+        #TODO Put table names here
+        self.connection.cursor().execute('DROP TABLE CASCADE Constraints')
+        self.connection.cursor().execute('DROP TABLE CASCADE Constraints')
+        """
 
     def runCustomQuery(self):
             #TODO run a custiom query in a separate popup window
