@@ -202,17 +202,17 @@ NULL
 
 INSERT INTO Recruiters VALUES
 (
-1111111110, 'Recruiter', 'BMO', 'Sample Description', 'Bob', 'Smith', NULL, 'bobsmith@example.com'
+1111111110, 'Recruiter', 'BMO', 'Sample Description', 'Bob', 'Smith', NULL
 )
 
 INSERT INTO Recruiters VALUES
 (
-2222222220, 'Recruitment Officer', 'Twitter', 'Sample Description', 'Jack', 'Jackson', 'J', 'jackjjackson@example.com'
+2222222220, 'Recruitment Officer', 'Twitter', 'Sample Description', 'Jack', 'Jackson', 'J'
 )
 
 INSERT INTO Recruiters VALUES
 (
-3333333330, 'Super Recruiter', 'Big Company', 'Sample Description', 'Tony', 'Baloney', NULL, 'tbaloney@example.com'
+3333333330, 'Super Recruiter', 'Big Company', 'Sample Description', 'Tony', 'Baloney', NULL
 )
 
 INSERT INTO RecruitersEmail VALUES 
