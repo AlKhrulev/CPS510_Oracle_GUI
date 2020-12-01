@@ -620,55 +620,55 @@ Toronto,
 'C'
 )
 
-INSERT INTO ApplicantEmails VALUES
+INSERT INTO ApplicantsEmail VALUES
 (
 'Cras.eget@sed.net',
 5
 )
 
-INSERT INTO ApplicantEmails VALUES
+INSERT INTO ApplicantsEmail VALUES
 (
 'nunc.est@pretiumet.co.uk',
 6
 )
 
-INSERT INTO ApplicantEmails VALUES
+INSERT INTO ApplicantsEmail VALUES
 (
 'nisl.arcu@Praesenteudui.net',
 7
 )
 
-INSERT INTO ApplicantEmails VALUES
+INSERT INTO ApplicantsEmail VALUES
 (
 'justin.uberti@google.com',
 41
 )
 
-INSERT INTO ApplicantEmails VALUES
+INSERT INTO ApplicantsEmail VALUES
 (
 'marissa.mayer@yahoo.com',
 42
 )
 
-INSERT INTO ApplicantEmails VALUES
+INSERT INTO ApplicantsEmail VALUES
 (
 'sheril.sandberg@facebook.com',
 43
 )
 
-INSERT INTO ApplicantEmails VALUES
+INSERT INTO ApplicantsEmail VALUES
 (
 'sample@sample.com',
 1111111111
 )
 
-INSERT INTO ApplicantEmails VALUES
+INSERT INTO ApplicantsEmail VALUES
 (
 'john@sample.com',
 2222222222
 )
 
-INSERT INTO ApplicantEmails VALUES
+INSERT INTO ApplicantsEmail VALUES
 (
 'experienceman@sample.com',
 3333333333
