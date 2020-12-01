@@ -4,6 +4,10 @@ import cx_Oracle
 import config
 from tkinter import N,S,W,E, simpledialog
 
+def find_query_name(query):
+    "Used to find a query name"
+    return query[:query.find('(')]
+
 class mainWindow():
     def __init__(self):
         self.root = tk.Tk()
@@ -58,8 +62,10 @@ class mainWindow():
     def createTables(self):
         #TODO Create tables through CREATE TABLE SQL Command
         createTablesList = open("createTables.txt", "r").read().split('\n\n')
+
         #try:
         for table in createTablesList:
+            print(f"Executing {find_query_name(table)}")
             self.connection.cursor().execute(" ".join(table.split('\n')))
         string = "Successfully created tables"
             
@@ -82,6 +88,7 @@ class mainWindow():
         populateTablesString = open("populateTables.txt", "r").read().split('\n\n')
     
         for table in populateTablesString:
+            print(f"Executing {find_query_name(table)}")
             self.connection.cursor().execute(" ".join(table.split('\n')))
         string = "Successfully populated tables"
         #except cx_Oracle.Error as error:
