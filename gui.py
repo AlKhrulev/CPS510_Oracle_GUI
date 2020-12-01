@@ -86,9 +86,7 @@ class mainWindow():
         self.connection.cursor().execute('DROP TABLE RecruiterEmail CASCADE Constraints')
         self.connection.cursor().execute('DROP TABLE ApplicantsEmails CASCADE Constraints')
         self.connection.cursor().execute('DROP TABLE ApplicantsPhone CASCADE Constraints')
-        #TODO Put table names here
-        self.connection.cursor().execute('DROP TABLE CASCADE Constraints')
-        self.connection.cursor().execute('DROP TABLE CASCADE Constraints')
+        self.connection.cursor().execute('DROP TABLE JobLocation CASCADE Constraints')
         """
 
     def runCustomQuery(self):
