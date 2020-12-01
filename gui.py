@@ -55,16 +55,18 @@ class mainWindow():
     
     def createTables(self):
         #TODO Create tables through CREATE TABLE SQL Command
-        createTablesString = " ".join(open("createTables.txt", "r").read().split('\n'))
+        createTablesList = open("createTables.txt", "r").read().split('\n\n')
 
-        self.connection.cursor().execute(createTablesString)
+        for table in createTablesList:
+            self.connection.cursor().execute(" ".join(table.split('\n')))
 
 
     def populateTables(self):
         #TODO populate tables with INSERT INTO SQL Command
-        populateTablesString = " ".join(open("populateTables.txt", "r").read().split('\n'))
+        populateTablesString = open("populateTables.txt", "r").read().split('\n\n')
 
-        self.connection.cursor().execute(populateTablesString)
+        for table in populateTablesString:
+            self.connection.cursor().execute(" ".join(table.split('\n')))
 
     def dropTables(self):
         #TODO Drop tables with DROP TABLE SQL Command
