@@ -11,7 +11,7 @@ TO_DATE('11-01-22','DD-MM-YY'),
 40971,
 57383,
 'Linux,Tensorflow,Python,Bash,Pandas,Numpy,Git',
-'Maintain and research Deep Learning algorithms for healthcare;develop and deploy ML models in AWS')
+'Maintain and research Deep Learning algorithms for healthcaredevelop and deploy ML models in AWS')
 
 INSERT INTO JobPostings VALUES 
 (2,
@@ -26,7 +26,7 @@ TO_DATE('23-01-22','DD-MM-YY'),
 32093,
 83732,
 'PHP,Python,SQL,Perl,HTML,CSS',
-'Write automated tests for various software products; document all bugs and other issues encountered; debug legacy software; make SQL queries to receive necessary information from database')
+'Write automated tests for various software products document all bugs and other issues encountered debug legacy software make SQL queries to receive necessary information from database')
 
 INSERT INTO JobPostings VALUES 
 (3,
@@ -43,7 +43,7 @@ TO_DATE('20-10-21','DD-MM-YY'),
 40948,
 96836,
 'AWS,Bash,Pytorch,Tensorflow,Python,Numpy,Pandas',
-'Assess clients needs and insurance risks; develop software to detect insurance fraud using Machine Learning;Deploy and maintain model on AWS')
+'Assess clients needs and insurance risks develop software to detect insurance fraud using Machine LearningDeploy and maintain model on AWS')
 
 INSERT INTO JobPostings VALUES 
 (4,
@@ -58,7 +58,7 @@ TO_DATE('09-12-21','DD-MM-YY'),
 43317,
 96028,
 'HTML,CSS,React,Javascript,SQL',
-'Maintain the database; write high-quality code for our clients')
+'Maintain the database write high-quality code for our clients')
 
 INSERT INTO JobPostings VALUES 
 (
@@ -113,7 +113,7 @@ TO_DATE('09-12-21','DD-MM-YY'),
 
 INSERT INTO JobPostings VALUES
 (
-111, 'Web Developer', 'BMO', 'Canada', 'Ontario', 'Toronto', NULL, NULL, NULL, 100000, 100000, 'Sample Skills', 'Sample Reqs') 
+111, 'Web Developer', 'BMO', 'Canada', 'Ontario', 'Toronto', NULL, NULL, NULL, 100000, 100000, 'Sample Skills', 'Sample Reqs')
 
 INSERT INTO JobPostings VALUES
 (
@@ -122,17 +122,6 @@ INSERT INTO JobPostings VALUES
 INSERT INTO JobPostings VALUES
 (
 333, 'Full Stack Developer', 'Big Company', 'Canada', 'Ontario', 'Ottawa', NULL, NULL, NULL, 50000, 50000, 'Sample Skills', 'Sample Reqs')
-
-INSERT INTO Recruiters VALUES 
-(
-1,
-'Corporate Recruiter',
-'Pretium Neque Morbi Incorporated',
-'The auction house that sells a large collection of rare items including drawings,furniture,jewelry,and others',
-'Yuli',
-'Pierce',
-NULL,
-)
 
 INSERT INTO Recruiters VALUES 
 (
@@ -277,7 +266,7 @@ To_DATE('20-09-85','DD-MM-YY'),
 '170-3837 Tortor, Ave',
 '816',
 337,
-39053-9090,
+'39053-9090',
 'Work',
 'Manchester University',
 'Masters',
@@ -316,7 +305,7 @@ NULL,
 'P.O. Box 667,626 Sem Avenue',
 395,
 455,
-Z7449,
+'Z7449',
 'Main',
 'The University of Berlin',
 'Masters',
@@ -355,7 +344,7 @@ NULL,
 'Ap #540-2514 Orci,Road',
 952,
 355,
-M46 3PP,
+'M46 3PP',
 'Main',
 'University of Amsterdam',
 'Phd',
@@ -378,7 +367,7 @@ NULL,
 
 INSERT INTO ApplicantsPhone VALUES 
 (
-7
+7,
 576,
 3135865588
 )
@@ -394,7 +383,7 @@ NULL,
 'Downing St',
 '10',
 '11',
-XYZXYZ,
+'XYZXYZ',
 'Business',
 'UC San Diego',
 'Bachelor of Science',
@@ -433,7 +422,7 @@ NULL,
 'Some St',
 '11',
 '12',
-ABCABC,
+'ABCABC',
 'Business',
 'Stanford',
 'Bachelor of Arts',
@@ -472,7 +461,7 @@ NULL,
 'Crazy St',
 '13',
 '14',
-IJKIJK,
+'IJKIJK',
 'Business',
 'Harvard',
 'Bachelor of Arts',
@@ -502,7 +491,7 @@ INSERT INTO ApplicantsPhone VALUES
 
 INSERT INTO Applicants VALUES
 (
-1111111111, 'Kirill', 'Shmakov', NULL, TO_DATE('24/10/2000','DD/MM/YYYY'), 'Ontario', 'Sample Street', '100', 'NULL', A1A 1A1, 'mobile', 'Ryerson University', 'BSc', 'Computer Science', TO_DATE('07/07/2018','DD/MM/YYYY'), TO_DATE('04/10/2023','DD/MM/YYYY'), NULL, NULL, NULL, NULL, NULL, NULL, 'Java, Python, C', 'Microsoft Office, Linux, Photoshop', 'English, Russian', 'Full Stack Development', 'Example Link', 'Example link name'
+1111111111, 'Kirill', 'Shmakov', NULL, TO_DATE('24/10/2000','DD/MM/YYYY'), 'Ontario', 'Sample Street', '100', 'NULL', 'A1A 1A1', 'mobile', 'Ryerson University', 'BSc', 'Computer Science', TO_DATE('07/07/2018','DD/MM/YYYY'), TO_DATE('04/10/2023','DD/MM/YYYY'), NULL, NULL, NULL, NULL, NULL, NULL, 'Java, Python, C', 'Microsoft Office, Linux, Photoshop', 'English, Russian', 'Full Stack Development', 'Example Link', 'Example link name'
 )
 
 INSERT INTO ApplicantsPhone VALUES
@@ -514,7 +503,7 @@ INSERT INTO ApplicantsPhone VALUES
 
 INSERT INTO Applicants VALUES
 (
-2222222222, 'John', 'Lastname', NULL, TO_DATE('01/10/1990','DD/MM/YYYY'), 'Ontario', 'Sample Street', '50', '17', B2B 2B2, 'mobile', 'University of Toronto', 'BSc', 'Computer Science', TO_DATE('05/05/2008','DD/MM/YYYY'), TO_DATE('10/04/2016','DD/MM/YYYY'), NULL, NULL, NULL, NULL, NULL, NULL, 'JavaScript, HTML, CSS, PHP', 'Microsoft Office', 'English, Chinese', 'Web Development', 'Example Link', 'Example link name'
+2222222222, 'John', 'Lastname', NULL, TO_DATE('01/10/1990','DD/MM/YYYY'), 'Ontario', 'Sample Street', '50', '17', 'B2B 2B2', 'mobile', 'University of Toronto', 'BSc', 'Computer Science', TO_DATE('05/05/2008','DD/MM/YYYY'), TO_DATE('10/04/2016','DD/MM/YYYY'), NULL, NULL, NULL, NULL, NULL, NULL, 'JavaScript, HTML, CSS, PHP', 'Microsoft Office', 'English, Chinese', 'Web Development', 'Example Link', 'Example link name'
 )
 
 INSERT INTO ApplicantsPhone VALUES
@@ -526,7 +515,7 @@ INSERT INTO ApplicantsPhone VALUES
 
 INSERT INTO Applicants VALUES
 (
-3333333333, 'Experience', 'Man', NULL, TO_DATE('13/11/1980','DD/MM/YYYY'),'Quebec','Sample Street', '1000', NULL, C3C 3C3, 'mobile', 'University of Waterloo', 'BSc', 'Computer Science', TO_DATE('07/07/1998','DD/MM/YYYY'), TO_DATE('04/10/2003','DD/MM/YYYY'), 4.00, 'Software Developer', 'Google', TO_DATE('10/12/2003','DD/MM/YYYY'),NULL,'Sample Description', 'Java,Python,C++, MySQL, Swift, Rust','Linux, Microsoft Office', 'English, French', 'Machine Learning, Web Development, Full Stack Development', 'Example link', 'Example link name'
+3333333333, 'Experience', 'Man', NULL, TO_DATE('13/11/1980','DD/MM/YYYY'),'Quebec','Sample Street', '1000', NULL, 'C3C 3C3', 'mobile', 'University of Waterloo', 'BSc', 'Computer Science', TO_DATE('07/07/1998','DD/MM/YYYY'), TO_DATE('04/10/2003','DD/MM/YYYY'), 4.00, 'Software Developer', 'Google', TO_DATE('10/12/2003','DD/MM/YYYY'),NULL,'Sample Description', 'Java,Python,C++, MySQL, Swift, Rust','Linux, Microsoft Office', 'English, French', 'Machine Learning, Web Development, Full Stack Development', 'Example link', 'Example link name'
 )
 
 INSERT INTO JobLocation VALUES 
@@ -564,7 +553,7 @@ INSERT INTO JobLocation VALUES
 'C',
 'T',
 'XYZXYZ',
-Toronto,
+'Toronto',
 1,
 'C'
 )
@@ -575,7 +564,7 @@ INSERT INTO JobLocation VALUES
 'C',
 'T',
 'ABCABC',
-Toronto,
+'Toronto',
 1,
 'C'
 )
@@ -585,7 +574,7 @@ INSERT INTO JobLocation VALUES
 'C',
 'T',
 'IJKIJK',
-Toronto,
+'Toronto',
 1,
 'C'
 )
@@ -595,7 +584,7 @@ INSERT INTO JobLocation VALUES
 'C',
 'T',
 'A1A 1A1',
-Toronto,
+'Toronto',
 1,
 'C'
 )
@@ -605,7 +594,7 @@ INSERT INTO JobLocation VALUES
 'C',
 'T',
 'B2B 2B2',
-Toronto,
+'Toronto',
 1,
 'C'
 )
@@ -615,7 +604,7 @@ INSERT INTO JobLocation VALUES
 'C',
 'T',
 'C3C 3C3',
-Toronto,
+'Toronto',
 1,
 'C'
 )
@@ -722,4 +711,5 @@ INSERT INTO JobsManaged VALUES (21,32)
 INSERT INTO JobsManaged VALUES (111,1111111110)
 
 INSERT INTO JobsManaged VALUES (222,2222222220)
+
 INSERT INTO JobsManaged VALUES (333,3333333330)
