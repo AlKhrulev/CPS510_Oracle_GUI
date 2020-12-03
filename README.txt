@@ -15,3 +15,5 @@ Create and populate tables by pressing the buttons
 Use the query button to submit custom queries
 You will be able to see the results in a new pop-up window
 Press drop to erase created tables
+
+Clarification: Queries do not have semicolons in our text files for formatting due to our program
