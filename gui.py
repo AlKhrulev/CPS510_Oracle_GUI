@@ -9,15 +9,16 @@ def find_query_name(query):
     return query[:query.find('(')]
 
 class mainWindow():
+    """
+    The main application window containing up to 4 buttons:
+    CREATE,POPULATE,DROP Tables, and Run a custom query
+    """
     def __init__(self):
         self.root = tk.Tk()
-        #self.label=tk.Label(self.root,
-        #                   text = "Welcome to the database.\nPlease click the button to connect.")
 
         self.root.geometry("200x100")
         self.label=tk.Label(self.root)        
     
-        #TODO change the button command once they are written
         self.buttonTopLeft = tk.Button(self.root,
                           text = 'Establish connection',
                           command=self.connect_to_db)
@@ -30,10 +31,7 @@ class mainWindow():
         self.buttonBottomRight = tk.Button(self.root,
                           text = 'RUN A CUSTOM QUERY',
                           command=self.runCustomQuery)
-                          #command=lambda: self.label.grid())                     
        
-        #for reference, don't delete yet padx=10, pady=10
-        #
         self.buttonTopLeft.grid(column=0, row=0,sticky=N+S+E+W)
         self.buttonTopRight.grid(column=1, row=0,sticky=N+S+E+W)
         self.buttonBottomLeft.grid(column=0, row=1,sticky=N+S+E+W)
@@ -60,17 +58,13 @@ class mainWindow():
         self.connection.close()
     
     def createTables(self):
-        #TODO Create tables through CREATE TABLE SQL Command
         createTablesList = open("createTables.txt", "r").read().split('\n\n')
 
-        #try:
         for table in createTablesList:
             print(f"Executing {find_query_name(table)}")
             self.connection.cursor().execute(" ".join(table.split('\n')))
         string = "Successfully created tables"
             
-        #except cx_Oracle.Error as error:
-        #    string = error
         
         newWin = tk.Tk()
         textBox = tk.Text(newWin)
@@ -83,16 +77,12 @@ class mainWindow():
         newWin.mainloop()
 
     def populateTables(self):
-        #TODO populate tables with INSERT INTO SQL Command
-        #try:
         populateTablesString = open("populateTables.txt", "r").read().split('\n\n')
     
         for table in populateTablesString:
             print(f"Executing {find_query_name(table)}")
             self.connection.cursor().execute(" ".join(table.split('\n')))
         string = "Successfully populated tables"
-        #except cx_Oracle.Error as error:
-        #    string = error
         
         newWin = tk.Tk()
         textBox = tk.Text(newWin)
@@ -105,13 +95,12 @@ class mainWindow():
         newWin.mainloop()
 
     def dropTables(self):
-        #TODO Drop tables with DROP TABLE SQL Command
         dropJobPostings = "DROP TABLE JobPostings CASCADE Constraints"
         dropRecruiters = "DROP TABLE Recruiters CASCADE Constraints"
         dropApplicants = "DROP TABLE Applicants CASCADE Constraints"
         dropJobsApplied = "DROP TABLE JobsApplied CASCADE Constraints"
         dropJobsManaged = "DROP TABLE JobsManaged CASCADE Constraints"
-        #try:
+
         self.connection.cursor().execute("DROP TABLE RecruitersEmail CASCADE Constraints")
         self.connection.cursor().execute("DROP TABLE ApplicantsEmail CASCADE Constraints")
         self.connection.cursor().execute("DROP TABLE ApplicantsPhone CASCADE Constraints")
@@ -124,8 +113,6 @@ class mainWindow():
         self.connection.cursor().execute(dropJobsManaged)
             
         string = "Successfully dropped tables"
-        #except cx_Oracle.Error as error:
-        #    string = error
         
         newWin = tk.Tk()
         textBox = tk.Text(newWin)
@@ -138,7 +125,6 @@ class mainWindow():
         newWin.mainloop()
 
     def runCustomQuery(self):
-            #TODO run a custiom query in a separate popup window
             try:
                 query = simpledialog.askstring(title="Query", prompt=("Input Custom Query Here: " + " " * 100))
                 self.cursor.execute(query)
@@ -169,7 +155,6 @@ class mainWindow():
         Connect to the Oracle DMBS and restore the right layout through
         self.restore_layout()
         """
-        #TODO paste the db connect code here
         self.connection = None
         try:
             self.connection = cx_Oracle.connect(
@@ -185,6 +170,7 @@ class mainWindow():
         except cx_Oracle.Error as error:
             string = error
             print(error)
+
         #restore the layout to the correct one
         self.restore_layout()
         
@@ -205,6 +191,7 @@ class mainWindow():
         """
         #change the text on the top left button
         self.buttonTopLeft.configure(text="CREATE TABLES",command=self.createTables)
+
         #return buttons to the window
         self.buttonTopRight.grid()
         self.buttonBottomLeft.grid()
